@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bought
+{% endblock %}
+
+{% block main %}
+    <h1> Thank you! Your transaction has been approved!</h1>
+    <h2> You just bought {{shares}} shares of {{quote['name']}} shares! </h1>
+
+    <h1> Portfolio</h1>
+    <table class="table table-striped">
+        <tr>
+            <th> Symbol </th>
+            <th> Name </th>
+            <th> Shares </th>
+            <th> Price </th>
+            <th> Total</th>
+        </tr>
+        <tr>
+            <th> {{symbol}} </th>
+            <th> {{quote['name']}} </th>
+            <th> {{shares}}  </th>
+            <th> {{quote['price']}}  </th>
+            <th> {{Total}} </th>
+        </tr>
+    <table>
+
+
+    <p1> Do you wan't to buy any more stocks </p1>
+
+    <form action = "/quote" method = "post">
+        <div class = "form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+
+{% endblock %}

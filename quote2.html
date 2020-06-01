@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote 2
+{% endblock %}
+
+{% block main %}
+   <table class="table table-striped">
+       <tr>
+           <th> Name</th>
+           <th> Price</th>
+           <th> Symbol</th>
+       </tr>
+       <tr>
+           <td> {{ quote["name"] }} </td>
+           <td> {{ quote["price"] }} </td>
+           <td> {{ quote["symbol"] }} </td>
+       </tr>
+   </table>
+
+
+    <p1> Look for another stock </p1>
+
+    <form action = "/quote" method = "post">
+        <div class = "form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+
+
+{% endblock %}

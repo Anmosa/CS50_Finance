@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+
+{% endblock %}
+
+{% block main %}
+
+   <p> INDEX </p>
+
+    <p> Hello {{ username[0]['username'] }}, Welcome to your Stock Portfolio</p>
+    <p> The table below will show your current portfolio, if you wish to quote, buy, sell or see your trading history just click on the tabs above!</p>
+
+    <h1> Portfolio</h1>
+    <table class="table table-striped">
+        <tr>
+            <th> Symbol </th>
+            <th> Name </th>
+            <th> Shares </th>
+            <th> Price </th>
+            <th> Total</th>
+        </tr>
+        {% for rows in rows %}
+        <tr>
+            <td> {{ rows ['Symbol']}}</td>
+            <td> {{ rows ['Name'] }}</td>
+            <td> {{ rows ['Quantity'] }}</td>
+            <td> {{ rows ['Price'] }}</td>
+            <td> {{ rows ['Total'] }}</td>
+        </tr>
+    {% endfor %}
+        <tr>
+            <td> Cash </td>
+            <td> - </td>
+            <td> - </td>
+            <td> - </td>
+            <td> {{ Cash [0]['cash'] }}</td>
+        </tr>
+    </table>
+
+
+{% endblock %}
